@@ -1,10 +1,10 @@
 package cafeteria;
 
 import java.util.Date;
+import java.util.LinkedList;
 
 public class Cheque {
-
-    private Order order;
+    LinkedList<Order> order = new LinkedList<Order>();
     private int TableNumber;
     private Date date;
     // private Casher chasher;
@@ -19,8 +19,12 @@ public class Cheque {
         Service = 0.12;
     }
 
+    Cheque() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public void setOrder(Order order) {
-        this.order = order;
+        this.order.add(order);
     }
 
     public void setService(double Service) {
@@ -32,12 +36,15 @@ public class Cheque {
     }
 
     public void setTottal() {
-        for (int i = 0; i < order.getQuantety(); i++) {
-            this.Tottal += order.getItem().getPrice();
+        int size= order.size();
+        for (int i = 0; i < size ;i++) {
+            int Isize = order.get(i).getItem().size();
+            for(int j = 0; j<Isize; j++)
+            this.Tottal += order.get(i).getItem().get(j).getPrice();
         }
     }
 
-    public Order getOrder() {
+    public LinkedList<Order> getOrder() {
         return order;
     }
 

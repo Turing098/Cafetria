@@ -2,18 +2,21 @@ package cafeteria;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.LinkedList;
 
 public class Order {
 
-    private Items item;
-    private int Quantety;
+    private LinkedList<Items> item = new LinkedList<Items>();
+    private LinkedList<Integer> Quantety = new LinkedList<Integer>();
     private Date date;
+    private boolean State;
 
-    public Order(String name, float Quant) {
-        item.setName(name);
-        item.setQuanety(Quant);
+    public Order(LinkedList<Items> items, LinkedList<Integer> Quant, boolean ST) {
+        this.item=items;
+        this.Quantety=Quant;
         date = new Date();
         SimpleDateFormat ft = new SimpleDateFormat("E yyyy.MM.dd 'at' hh:mm:ss a zzz");
+        this.State=ST;
         
     }
 
@@ -25,21 +28,21 @@ public class Order {
         this.date = date;
     }
 
-    public Items getItem() {
+    public LinkedList<Items> getItem() {
         return item;
     }
 
-    public int getQuantety() {
+    public LinkedList<Integer> getQuantety() {
         return Quantety;
     }
 
     public void setItem(String name, float BP, float price, float Quant) {
-        this.item.setName(name);
-        this.item.setPrice(price);
-        this.item.setQuanety(Quant);
+        this.item.getLast().setName(name);
+        this.item.getLast().setPrice(price);
+        this.item.getLast().setQuanety(Quant);
     }
 
-    public void setQuantety(int Quantety) {
+    public void setQuantety(LinkedList<Integer> Quantety) {
         this.Quantety = Quantety;
     }
 
