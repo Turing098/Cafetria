@@ -36,10 +36,9 @@ public class Order {
         return Quantety;
     }
 
-    public void setItem(String name, float BP, float price, float Quant) {
+    public void setItem(String name, float price) {
         this.item.getLast().setName(name);
         this.item.getLast().setPrice(price);
-        this.item.getLast().setQuanety(Quant);
     }
 
     public void setQuantety(LinkedList<Integer> Quantety) {

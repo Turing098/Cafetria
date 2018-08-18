@@ -48,6 +48,12 @@ public class CFunction {
     }
     
     private void AddCasher(){
+         if(User.Maneger==user.getType()){
+            
+        }
+        else {
+            System.out.println("u can't do it son pf bitch");
+        }
         
     }
     
