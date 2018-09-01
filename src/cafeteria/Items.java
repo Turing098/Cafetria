@@ -5,9 +5,9 @@ public class Items {
     private String Name;
     private float BoughtPrice;
     private float Price;
-    private float Quanety;
+    private int Quanety;
      
-    public Items(String name, float BP, float price, float Quant) {
+    public Items(String name, float BP, float price, int Quant) {
         this.Name = name;
         this.BoughtPrice = BP;
         this.Price = price;
@@ -26,7 +26,7 @@ public class Items {
         return Price;
     }
 
-    public float getQuanety() {
+    public int getQuanety() {
         return Quanety;
     }
 
@@ -42,7 +42,7 @@ public class Items {
         this.Price = Price;
     }
 
-    public void setQuanety(float Quanety) {
+    public void setQuanety(int Quanety) {
         this.Quanety = Quanety;
     }
 
